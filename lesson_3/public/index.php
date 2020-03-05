@@ -7,8 +7,11 @@ use App\services\Autoload;
 include dirname(__DIR__) . "/services/Autoload.php";
 spl_autoload_register([new Autoload(), 'loadClass']);
 
-var_dump((new Good())->getOne(1));
-var_dump((new Good())->getAll());
+// var_dump((new Good())->getOne(1));
+var_dump((new Good())->update(13, "name", "Persimmon"));
+
+
+// var_dump((new Good())->getAll());
 
 // $good = new Good();
 

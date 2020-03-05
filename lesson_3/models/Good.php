@@ -3,10 +3,12 @@ namespace App\models;
 
 class Good extends Model
 {
-    protected $id;
     protected $name;
-    protected $info;
+    protected $path;
+    protected $name_file;
     protected $price;
+    protected $quantity;
+    protected $description;
 
     protected function getTableName(): string
     {

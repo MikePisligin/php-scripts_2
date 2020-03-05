@@ -36,20 +36,75 @@ abstract class Model
 	return $this->db->findAll($sql, get_called_class());
     }
 
-    protected function insert()
+    public function insert()
     {
+	$tableCol = array();	
+	$tableVal = array();
+	
+	
+	$this->name = 'Persimmon';
+	$this->path = 'images/';
+	$this->name_file = 'persimmon.jpg';
+	$this->price = '40';
+	$this->quantity = '95';
+	$this->description = 'description';
+
+
         foreach ($this as $key => $value) {
-            echo 'Key^ ' . $key;
-            var_dump($value);
+            
+	    if ($key == 'db' ) {
+	     break;
+	   }
+	
+	$value = '\'' . $value . '\'';
+	array_push($tableCol, $key);
+	array_push($tableVal, $value);
+
+	    
         }
+        $str1 = implode(', ', $tableCol);
+        $str2 = implode(', ', $tableVal);
+	
+	$sql = "INSERT INTO {$this->getTableName()} ({$str1}) VALUES ({$str2})";
+	$this->db->execute($sql);
+
     }
 
-    protected function update()
+    public function update($id, $newCol, $newValue)
     {
+
+	/*$tableCol = array();	
+	$tableVal = array();
+	
+	$this->id = 13;
+	$this->name = 'Persimmon';
+	$this->path = 'images/';
+	$this->name_file = 'persimmon.jpg';
+	$this->price = '40';
+	$this->quantity = '95';
+	$this->description = 'description';
+
+
         foreach ($this as $key => $value) {
-            echo 'Key^ ' . $key;
-            var_dump($value);
+
+	if ($key == 'db' ) { break; }
+
+	$value = '\'' . $value . '\'';
+	array_push($tableCol, $key);
+	array_push($tableVal, $value);
+
+	    
         }
+        $str1 = implode(', ', $tableCol);
+        $str2 = implode(', ', $tableVal);*/
+	
+
+	/* Ключевое слово ON DUPLICATE KEY UPDATE обновляет существующую запись, */
+	/* если запись по уникальному полю не найдена, то обновляется значение в столбце $newCol. */
+
+	// $sql = "INSERT INTO {$this->getTableName()} ({$str1}) VALUES ({$str2}) ON DUPLICATE KEY UPDATE {$newCol} = '{$newValue}'";
+	$sql = "UPDATE {$this->getTableName()} SET {$newCol} = '{$newValue}' WHERE id = {$id} ";
+	$this->db->execute($sql);
     }
 
     public function delete()
