@@ -20,7 +20,7 @@ $controllerName = 'App\\controllers\\' . ucfirst($controller) . 'Controller';
 
 if (class_exists($controllerName)) {
     /** @var \App\controllers\UserController $realController */
-    $realController = new $controllerName(new RendererTmplServices());
+    $realController = new $controllerName(new TwigRendererServices());
     $content = $realController->run($action);
     if (!empty($content)) {
         echo $content;
