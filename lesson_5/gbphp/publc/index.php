@@ -1,10 +1,11 @@
 <?php
 use App\services\Autoloader;
 use App\services\RendererTmplServices;
+use App\services\TwigRendererServices;
 
 include dirname(__DIR__) . '/services/Autoloader.php'; //удалить
 spl_autoload_register([(new Autoloader()), 'loadClass']);//удалить
-require_once dirname(__DIR__) . '/vendor/autoload.php';
+include dirname(__DIR__) . '/vendor/autoload.php';
 
 $controller = 'user';
 if ($_GET['c']) {
@@ -26,6 +27,3 @@ if (class_exists($controllerName)) {
         echo $content;
     }
 }
-
-
-

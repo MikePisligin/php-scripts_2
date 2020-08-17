@@ -7,10 +7,12 @@ class TwigRendererServices implements IRenderer
     /**
      * @var \Twig\Environment
      */
-    protected $twig;
+    public $twig;
 
     public function render($template, $params = [])
     {
+        // var_dump($this->twig);
+        $template = $template . '.twig';
         return $this->twig->render($template, $params);
     }
 }

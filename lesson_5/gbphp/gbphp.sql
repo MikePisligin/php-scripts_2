@@ -41,11 +41,11 @@ CREATE TABLE `goods` (
 --
 
 INSERT INTO `goods` (`id`, `name`, `price`, `info`, `img`) VALUES
-(1, 'Товар1', '100', 'Информация о первом товаре', 'img-66df5.jpg'),
-(2, 'Товар2', '200', 'Информация о Втором товаре', 'img-66df5.jpg'),
-(3, 'Товар3', '300', 'Информация о Третьем товаре', 'img-66df5.jpg'),
-(4, 'Товар4', '400', 'Информация о Четвертом товаре', 'img-66df5.jpg'),
-(5, 'Товар5', '500', 'Информация о пятом товаре', 'img-66df5.jpg');
+(1, 'Good1', '100', 'Info about good_1', 'img-66df5.jpg'),
+(2, 'Good2', '200', 'Info about good_2', 'img-66df5.jpg'),
+(3, 'Good3', '300', 'Info about good_3', 'img-66df5.jpg'),
+(4, 'Good4', '400', 'Info about good_4', 'img-66df5.jpg'),
+(5, 'Good5', '500', 'Info about good_5', 'img-66df5.jpg');
 
 -- --------------------------------------------------------
 
