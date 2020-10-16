@@ -3,16 +3,10 @@
 
     <h1>Пользователи</h1>
 
-    {% for user in paginator.getItems %}
-        <p>
-        <a href="/?c=user&a=one&id={{user.id}}"> {{user.fio}} </a>
-        <a href="/?c=user&a=del&id={{user.id}}">delete</a>
-        </p>
+    {% for user in users %}
+        <p><a href="/gbphp/publc/index.php?c=user&a=one&id={{user.id}}"> {{user.fio}}</a></p>
+        <p><a href="/gbphp/publc/index.php?c=user&a=del&id={{user.id}}">delete</a></p>
         <hr>
-    {% endfor %}
-
-    {% for page.urls in paginator.getUrls %}
-        <a href="{{urls}}">{{page}}</a>
     {% endfor %}
 
 {% endblock %}

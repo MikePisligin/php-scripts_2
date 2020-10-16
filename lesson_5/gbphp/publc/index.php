@@ -3,8 +3,8 @@ use App\services\Autoloader;
 use App\services\RendererTmplServices;
 use App\services\TwigRendererServices;
 
-include dirname(__DIR__) . '/services/Autoloader.php'; //удалить
-spl_autoload_register([(new Autoloader()), 'loadClass']);//удалить
+/* include dirname(__DIR__) . '/services/Autoloader.php';
+spl_autoload_register([(new Autoloader()), 'loadClass']); */
 include dirname(__DIR__) . '/vendor/autoload.php';
 
 $controller = 'user';

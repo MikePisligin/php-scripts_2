@@ -11,8 +11,20 @@ class TwigRendererServices implements IRenderer
 
     public function render($template, $params = [])
     {
-        // var_dump($this->twig);
+        if ($template == 'users') {
+
+          $users = $params["paginator"]->getItems();
+          $url = $params["paginator"]->getUrls();            
+        }
+
         $template = $template . '.twig';
-        return $this->twig->render($template, $params);
+        $content = $this->twig->render($template, [ 'users' => $users,
+                                                    'url' => $url,
+                                                    'user' => $params['user'],
+                                                    'goods' => $params['goods'],
+                                                    'good' => $params['good']
+                                                  ]);
+        return $this->twig->render('/layouts/main.twig', [ 'content' => $content ]);
+
     }
 }
