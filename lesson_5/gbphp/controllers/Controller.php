@@ -39,6 +39,9 @@ class Controller
 
     public function render($template, $params = [])
     {
+        $loader = new \Twig\Loader\FilesystemLoader(dirname(__DIR__) . '/views/');
+        $this->renderer->twig = new \Twig\Environment($loader);
+        
         return $this->renderer->render($template, $params);
     }
 

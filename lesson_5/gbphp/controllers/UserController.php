@@ -12,6 +12,9 @@ class UserController extends Controller
         $paginator = new PaginatorServices();
         $user = new User();
         $paginator->setItems($user, $this->getPage());
+
+        $users = $paginator->getItems();
+
         return $this->render(
             'users',
             [

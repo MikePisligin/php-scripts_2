@@ -1,0 +1,8 @@
+{% block content %}
+
+    <h1>Товары</h1>
+    {% for good in goods %}
+        <p><a href="/gbphp/publc/index.php?c=good&a=one&id={{good.id}}"> {{good.name}} </a></p>
+    {% endfor %}
+
+{% endblock %}

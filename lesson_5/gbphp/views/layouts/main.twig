@@ -2,12 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 <body>
-    {% content %}
+    <ul>
+        <li><a href="/gbphp/publc/index.php?c=user&a=all">Пользователи</a></li>
+        <li><a href="/gbphp/publc/index.php?c=good&a=all">Товары</a></li>
+        <li><a href="/gbphp/publc/index.php?c=good&a=add">Добавление товара</a></li>
+    </ul>
+
+    {{ content | raw }}
+
 </body>
 </html>
