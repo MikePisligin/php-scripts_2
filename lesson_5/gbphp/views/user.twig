@@ -1,0 +1,9 @@
+{% block content %}
+
+    <h1>Пользователь</h1>
+
+      <p><a href="/gbphp/publc/index.php?c=user&a=one&id={{user.id}}"> {{user.fio}}</a></p>
+      <p><a href="/?c=user&a=del&id={{user.id}}">delete</a></p>
+      <hr>
+
+{% endblock %}

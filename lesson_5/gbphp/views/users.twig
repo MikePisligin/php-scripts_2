@@ -1,0 +1,12 @@
+
+{% block content %}
+
+    <h1>Пользователи</h1>
+
+    {% for user in users %}
+        <p><a href="/gbphp/publc/index.php?c=user&a=one&id={{user.id}}"> {{user.fio}}</a></p>
+        <p><a href="/gbphp/publc/index.php?c=user&a=del&id={{user.id}}">delete</a></p>
+        <hr>
+    {% endfor %}
+
+{% endblock %}
